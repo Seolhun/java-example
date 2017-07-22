@@ -1,4 +1,4 @@
-package com.pattern.part1;
+package com.pattern.part1.domain;
 
 import java.util.Date;
 

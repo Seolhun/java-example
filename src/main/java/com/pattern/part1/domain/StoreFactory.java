@@ -1,4 +1,4 @@
-package com.pattern.part1;
+package com.pattern.part1.domain;
 
 import com.pattern.part1.ClothingStore;
 import com.pattern.part1.ConvenienceStore;
