@@ -1,7 +1,5 @@
 package com.pattern.part2.domain.item;
 
-import java.util.Date;
-
 public class Beverage implements Item {
 	private int size; // Volume
 
@@ -15,7 +13,7 @@ public class Beverage implements Item {
 	
 
 	@Override
-	public void madeItem(){
+	public void makeItem(){
 		System.out.println("Beverage : madeItem() : " + this.toString());
 	}
 	

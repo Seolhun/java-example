@@ -21,7 +21,7 @@ public class Clothing implements Item {
     }
 
     @Override
-    public void madeItem() {
+    public void makeItem() {
         System.out.println("Beverage : madeItem() : " + this.toString());
     }
 

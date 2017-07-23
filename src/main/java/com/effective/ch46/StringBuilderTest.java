@@ -12,7 +12,7 @@ public class StringBuilderTest {
 		GenerateRandom gr = new GenerateRandom();
 		List<String> stList = new ArrayList<>();
 		
-		/* Created Random Str */
+		/* Created Random String */
 		for (int i = 0; i < loopCount; i++) {
 			stList.add(i, gr.getRandomString().substring(0, 8));
 		}

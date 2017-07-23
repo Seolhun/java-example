@@ -115,3 +115,10 @@ Temporary Items
 .apdisk
 
 # End of https://www.gitignore.io/api/java,macos,intellij
+.idea/compiler.xml
+.idea/markdown-navigator.xml
+.idea/markdown-navigator/
+.idea/misc.xml
+.idea/modules.xml
+.idea/modules/
+.idea/vcs.xml

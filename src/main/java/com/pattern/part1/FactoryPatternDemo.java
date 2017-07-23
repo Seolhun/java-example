@@ -1,6 +1,7 @@
 package com.pattern.part1;
 
-import com.pattern.part1.Store;
+import com.pattern.part1.domain.Store;
+import com.pattern.part1.domain.StoreFactory;
 
 public class FactoryPatternDemo {
 	public static void main(String[] args){

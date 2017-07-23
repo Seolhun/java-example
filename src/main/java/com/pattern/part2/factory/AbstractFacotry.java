@@ -1,4 +1,4 @@
-package com.pattern.part2;
+package com.pattern.part2.factory;
 
 import com.pattern.part2.domain.item.Item;
 import com.pattern.part2.domain.store.Store;

@@ -1,6 +1,6 @@
 package com.pattern.part2.domain.item;
 
-public abstract class AbstractItem {
+public abstract class ItemDomain {
     private long index;
     private String name;
 

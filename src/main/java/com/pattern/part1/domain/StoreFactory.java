@@ -1,10 +1,5 @@
 package com.pattern.part1.domain;
 
-import com.pattern.part1.ClothingStore;
-import com.pattern.part1.ConvenienceStore;
-import com.pattern.part1.ShoesStore;
-import com.pattern.part1.Store;
-
 public class StoreFactory {
 	public Store openStore(String storeName) {
 		if(storeName == null){
