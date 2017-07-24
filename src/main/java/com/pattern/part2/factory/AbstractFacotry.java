@@ -4,7 +4,7 @@ import com.pattern.part2.domain.item.Item;
 import com.pattern.part2.domain.store.Store;
 
 public abstract class AbstractFacotry {
-    abstract Store openNewStore(long index);
+	public abstract Store openNewStore(String store);
 
-    abstract Item producedByIndex(long index);
+	public abstract Item producedItem(String item);
 }

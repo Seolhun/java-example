@@ -1,10 +1,10 @@
 package com.pattern.part2.domain.store;
 
-public class StoreDomain {
+public abstract class StoreDomain {
 	private long index;
 	private String name;
 	private String address;
-
+	
 	public long getIndex(){
 		return this.index;
 	}
@@ -28,4 +28,6 @@ public class StoreDomain {
 	public void setAddress(String address){
 		this.address = address;
 	}
+	
+	
 }
