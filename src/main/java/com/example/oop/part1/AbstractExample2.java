@@ -1,4 +1,4 @@
-package com.example.interface_abstract.part1;
+package com.example.oop.part1;
 
 public abstract class AbstractExample2 {
 	/** 추상 메소드 */

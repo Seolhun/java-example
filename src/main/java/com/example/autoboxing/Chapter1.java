@@ -1,7 +1,16 @@
 package com.example.autoboxing;
 
+
+/**
+ * The type Chapter 1.
+ */
 public class Chapter1 {
 
+	/**
+	 * Main.
+	 *
+	 * @param args the args
+	 */
 	public static void main(String[] args){
 		/** Created Wrapper Class */
 		Integer number = new Integer(30);

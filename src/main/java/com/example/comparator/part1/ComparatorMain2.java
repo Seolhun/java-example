@@ -1,6 +1,6 @@
 package com.example.comparator.part1;
 
-import com.example.comparator.Student;
+import com.example.comparator.common.Student;
 
 import java.util.Arrays;
 import java.util.Comparator;

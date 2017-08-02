@@ -1,6 +1,6 @@
 package com.example.comparator.part2;
 
-import com.example.comparator.Student;
+import com.example.comparator.common.Student;
 
 import java.util.*;
 

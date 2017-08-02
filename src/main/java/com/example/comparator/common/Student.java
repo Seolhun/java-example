@@ -1,4 +1,4 @@
-package com.example.comparator;
+package com.example.comparator.common;
 
 import java.util.Comparator;
 
@@ -12,21 +12,17 @@ public class Student implements Comparable<Student>, Comparator<Student> {
     //getter
     //setter
 
-    public Student(){
+    public Student() {
 
     }
 
-    public Student(int no, String name){
+    public Student(int no, String name) {
         this.no = no;
         this.name = name;
     }
 
     public int getNo() {
         return no;
-    }
-
-    public void setNo(int no) {
-        this.no = no;
     }
 
     public String getName() {
@@ -39,10 +35,7 @@ public class Student implements Comparable<Student>, Comparator<Student> {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "no=" + no +
-                ", name='" + name + '\'' +
-                '}';
+        return "Student{" + "no=" + no + ", name='" + name + '\'' + '}';
     }
 
     @Override

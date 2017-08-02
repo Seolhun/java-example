@@ -1,4 +1,4 @@
-package com.example.thread.part1;
+package com.example.thread.ch1;
 
 public class MainClass {
 
@@ -9,5 +9,4 @@ public class MainClass {
         Thread t = new Thread(threadExamplte1);
 
 	}
-
 }

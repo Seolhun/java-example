@@ -1,4 +1,4 @@
-package com.example.interface_abstract.part1;
+package com.example.oop.part1;
 
 public class Horse extends CommonAnimal implements RideInterface {
 	@Override
