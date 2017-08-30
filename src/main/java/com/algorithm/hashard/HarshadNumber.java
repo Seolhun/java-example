@@ -1,7 +1,7 @@
 package com.algorithm.hashard;
 
 public class HarshadNumber {
-    private static int[] rows = {18, 133, 155, 132};
+    private static int[] rows = {18, 133, 155, 132, 341, 431243};
 
     public boolean isHarshad(int num){
         System.out.println(num);

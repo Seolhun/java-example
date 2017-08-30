@@ -1,4 +1,4 @@
-#HarshadNumber
+# HarshadNumber
 
 [Go to Question](https://programmers.co.kr/learn/challenge_codes/130)
 
