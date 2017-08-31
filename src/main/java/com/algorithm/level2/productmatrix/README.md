@@ -1,6 +1,6 @@
 # ProductMatrix(행렬의 곱셈)
 
-[Go to Question](https://programmers.co.kr/learn/challenge_codes/172)
+[Go to Question](https://programmers.co.kr/learn/challenge_codes/141)
 
 - Question
 
