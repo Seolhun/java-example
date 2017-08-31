@@ -1,4 +1,4 @@
-package com.algorithm.nextint;
+package com.algorithm.level3.nextint;
 
 public class NextBigInt {
     private static int[] questions = {658594, 351547, 317524, 458449, 8157};

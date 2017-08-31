@@ -1,4 +1,4 @@
-package com.algorithm.hashard;
+package com.algorithm.level2.hashard;
 
 public class HarshadNumber {
     private static int[] rows = {18, 133, 155, 132, 341, 431243};
