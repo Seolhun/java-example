@@ -1,14 +1,17 @@
 #### *2017-04-20 ~ *  
-
-- Type : 개인 스터
-- IDE : Spring Tool Suite
+- Author : [SeolHun](http://github.com/SeolHun)
+- Type : Personal Study
+- IDE : Spring Tool Suite > IntelliJ
 - JAVA : 1.8
 - OS : OSX  
-
-## 1. 목표
-#### - 프로그래밍에 대한 기본요소 들에 대한 학습을 통해 예제 코드를 만들어 실행하기 위한 Repository입니다.
-#### - [블로그](http://postitforhooney.tistory.com/entry/Important-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EB%A1%9C%EC%84%9C-%EC%A7%88%EB%AC%B8%EC%97%90-%EC%A0%95%EB%8B%B5%EC%9D%84-%EC%B0%BE%EA%B8%B0-%EC%9C%84%ED%95%B4-%EB%85%B8%EB%A0%A5%ED%95%98%EB%8A%94-%EC%97%AC%EC%A0%95-%EC%A7%88%EB%AC%B8%EC%97%90-%EB%8B%B5%ED%95%98%EA%B8%B0)를 통해 공부한 내용을 공유합니다.
-
+---
+### 1. Goal
+- 프로그래밍에 대한 기본요소 들에 대한 학습을 통해 예제 코드를 만들어 실행하기 위한 Repository입니다.
+- [블로그](http://postitforhooney.tistory.com/entry/Important-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EB%A1%9C%EC%84%9C-%EC%A7%88%EB%AC%B8%EC%97%90-%EC%A0%95%EB%8B%B5%EC%9D%84-%EC%B0%BE%EA%B8%B0-%EC%9C%84%ED%95%B4-%EB%85%B8%EB%A0%A5%ED%95%98%EB%8A%94-%EC%97%AC%EC%A0%95-%EC%A7%88%EB%AC%B8%EC%97%90-%EB%8B%B5%ED%95%98%EA%B8%B0)를 통해 공부한 내용을 공유합니다.
+### 2. Table of Contents
+1. [Go to Algorithm](https://github.com/Seolhun/java-example/tree/feature/algorithm/src/main/java/com/algorithm)
+2. [Effective Java Example](https://github.com/Seolhun/java-example/tree/feature/algorithm/src/main/java/com/effective/)
+3. [Design Pattern](https://github.com/Seolhun/java-example/tree/feature/algorithm/src/main/java/com/pattern/)
 
 ### 1. Java
 	1.상속, 다형성에 대해 어떤 개념인지 남에게 설명할 수 있나요? - 블로그 정리
@@ -21,7 +24,7 @@
 	8.소켓 프로그래밍을 해본 적 있나요?(최소 채팅방 구현) - Github 예제코드
 	9.멀티쓰레드 프로그래밍을 해본 적 있나요?
 	10.DB와 연동하는 프로그램을 작성해본 적 있나요?
-
+---
 ### 2. Web
 	1.HTML, CSS, JavaScript 각각이 웹 페이지에서 어떤 역할을 해야하는지 알고있다.
 	2.HTML5, CSS3, ES6에 대해 들어보았다.
@@ -33,8 +36,7 @@
 	8.시맨틱 웹이 무엇인지 알고있다.
 	9.REST API가 무엇인지 알고있다.
 	10.크로스 브라우징이 무엇인지 알고있다.
-
-
+---
 ### 3. 전산일반
 	1.폰 노이만 구조(Stored-Program Computer)를 알고 있나요?
 	2.경쟁상태(Race Condition)이 발생하는 조건을 알고 있나요?
