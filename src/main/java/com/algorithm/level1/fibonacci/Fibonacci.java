@@ -6,7 +6,7 @@ import java.util.List;
 class Fibonacci {
     public long fibonacci(int num) {
         List<Long> fibos = new ArrayList<>();
-        for (int i = 0; i < num; i++) {
+        for (int i = 0; i <= num; i++) {
             if (i == 0) {
                 fibos.add((long) 0);
             } else if (i == 1) {
@@ -16,7 +16,7 @@ class Fibonacci {
             }
             System.out.println(fibos.get(i));
         }
-        return fibos.get(num - 1);
+        return fibos.get(num);
     }
 
     // 아래는 테스트로 출력해 보기 위한 코드입니다.
