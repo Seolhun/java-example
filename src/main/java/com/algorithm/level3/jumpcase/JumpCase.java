@@ -16,8 +16,6 @@ class JumpCase {
             }
         }
 
-
-
         return answer;
     }
 
