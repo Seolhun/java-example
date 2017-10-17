@@ -1,4 +1,4 @@
-# Programmers of KaKao
+# Programmers
 
 [Go to Programmers](https://programmers.co.kr/)
 
