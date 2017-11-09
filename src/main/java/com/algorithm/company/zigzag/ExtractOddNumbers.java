@@ -1,4 +1,4 @@
-package com.algorithm;
+package com.algorithm.company.zigzag;
 
 import com.sun.corba.se.impl.io.TypeMismatchException;
 

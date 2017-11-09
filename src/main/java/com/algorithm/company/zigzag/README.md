@@ -1,4 +1,4 @@
-## Python Algorithm
+## ZIGZAG Algorithm
 #### [Extract Odd Numbers](https://www.wanted.co.kr/wd/5682)
 
 - 다음 문제를 풀기 위한 프로그램을 이력서에 첨부해주세요. 외부 라이브러리 사용 가능하고, 두가지 언어 이상으로 작성하거나 비주류 언어 사용시 가산점이 있습니다 ***
