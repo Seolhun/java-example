@@ -1,7 +1,5 @@
 package com.algorithm.company.zigzag;
 
-import com.sun.corba.se.impl.io.TypeMismatchException;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,13 +20,9 @@ public class ExtractOddNumbers {
         Pattern p = Pattern.compile("\\d+");
         Matcher m = p.matcher(n);
         while (m.find()) {
-            try {
-                int value = Integer.parseInt(m.group());
-                if (Integer.parseInt(m.group()) % 2 != 0) {
-                    result += Math.pow(value, 2);
-                }
-            } catch (TypeMismatchException e) {
-                e.printStackTrace();
+            int value = Integer.parseInt(m.group());
+            if (Integer.parseInt(m.group()) % 2 != 0) {
+                result += Math.pow(value, 2);
             }
         }
         return result;
