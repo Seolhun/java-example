@@ -2,7 +2,10 @@ package com.api.comparator.part2;
 
 import com.api.comparator.common.Student;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class ComparatorMain2 {
     public static void main(String[] agrs){

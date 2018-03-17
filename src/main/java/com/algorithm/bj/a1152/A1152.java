@@ -5,11 +5,12 @@ package com.algorithm.bj.a1152;
  * @created_date 2017. 11. 8.
  * @IDE IntelliJ IDEA
  */
+
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.Scanner;
 
-class MainClass {
+public class A1152 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String INPUT = scan.nextLine();
@@ -18,9 +19,9 @@ class MainClass {
         Pattern pattern = Pattern.compile("^[A-z]*");
         int count = 0;
 
-        for (String question: questions) {
+        for (String question : questions) {
             Matcher matcher = pattern.matcher(question);
-            if(matcher.matches()) {
+            if (matcher.matches()) {
                 count++;
             }
         }

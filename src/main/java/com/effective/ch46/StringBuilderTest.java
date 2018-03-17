@@ -1,10 +1,10 @@
 package com.effective.ch46;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.common.random.GenerateRandom;
 import com.common.speed.SpeedAnalysis;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class StringBuilderTest {
 	static int loopCount = 10000;

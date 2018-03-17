@@ -1,8 +1,8 @@
 package com.pattern.part2.domain.store;
 
-import java.util.Date;
-
 import com.pattern.part2.domain.item.Item;
+
+import java.util.Date;
 
 public class ConvenienceStore extends StoreDomain implements Store {
 	private String category;

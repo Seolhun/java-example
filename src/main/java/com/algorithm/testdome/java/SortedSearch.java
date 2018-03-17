@@ -1,7 +1,5 @@
 package com.algorithm.testdome.java;
 
-import java.util.Arrays;
-
 public class SortedSearch {
     /*
     Implement function countNumbers that accepts a sorted array of integers and counts

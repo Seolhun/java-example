@@ -1,24 +1,23 @@
-package com.algorithm.bj.a1152;
+package com.algorithm.bj.a9084;
 
 /**
  * @author HunSeol
  * @created_date 2017. 11. 8.
  * @IDE IntelliJ IDEA
  */
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 import java.util.Scanner;
 
 class MainClass {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int INPUT = scan.next();
+        int INPUT = scan.nextInt();
 
-        int[] coins = [500, 100, 50, 10, 5, 1];
+        MainClass mains = new MainClass();
+        int[] coins = {500, 100, 50, 10, 5, 1};
         for (int coin: coins) {
-            INPUT = this.getCountsByCoin(INPUT, coin);
+            INPUT = mains.getCountsByCoin(INPUT, coin);
         }
-
     }
 
     int getCountsByCoin(int price, int coin) {
