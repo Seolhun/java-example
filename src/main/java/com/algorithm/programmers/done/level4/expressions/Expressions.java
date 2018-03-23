@@ -1,7 +1,6 @@
 package com.algorithm.done.level4.expressions;
 
 public class Expressions {
-
     public int expressions(int num) {
         int answer = 0;
         int sum;
