@@ -20,11 +20,10 @@ public class Producer implements Runnable {
             for (int j = 0; j < 10000; j++) {
                 messageQueue.add(new Message(j, i + " Hello Message "+j));
             }
+            Tasks<Message> tasks = new Tasks<>(messageQueue);
 
             try {
-                Tasks<Message> tasks = new Tasks<>(messageQueue);
                 tasksQueue.put(tasks);
-
                 System.out.println("================================");
                 System.out.println("Tasks is put By Producer " + i);
                 System.out.println("================================");
