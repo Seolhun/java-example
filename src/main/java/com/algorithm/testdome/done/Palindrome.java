@@ -1,4 +1,4 @@
-package com.algorithm.testdome.java.done;
+package com.algorithm.testdome.done;
 
 public class Palindrome {
     public static boolean isPalindrome(String word) {

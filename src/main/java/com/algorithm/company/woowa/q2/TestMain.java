@@ -1,7 +1,5 @@
-package com.woowa.q3;
+package com.algorithm.company.woowa.q2;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -25,8 +23,7 @@ public class TestMain {
     public int solution(int[] A, int[] B, int M, int X, int Y) {
         Queue<People> waitingQueue = new LinkedBlockingQueue<>();
         for (int i = 0; i < A.length; i++) {
-            Map<String, Integer> map = new HashMap<>();
-            waitingQueue.add(new People(A[i], B[i]));
+            waitingQueue.offer(new People(A[i], B[i]));
         }
         return getInElv(waitingQueue, X, Y, 0);
     }
@@ -34,26 +31,29 @@ public class TestMain {
     private int getInElv(Queue<People> queue, int X, int Y, int count) {
         int xSum = 0;
         int ySum = 0;
-
         int floor = 1;
 
         while (!queue.isEmpty()) {
-            for (People p : queue) {
-                if (xSum + 1 <= X || ySum + p.getWeight() <= Y) {
-                    xSum += 1;
-                    ySum += p.getWeight();
-                } else {
-                    People getOffPeople = queue.poll();
-                    if (floor != getOffPeople.getGoal()) {
-                        floor = getOffPeople.getGoal();
-                        count++;
-                    }
-                    xSum-=1;
-                    if (xSum == 0) {
-                        count++;
-                    }
-                    return getInElv(queue, X, Y, count);
+            Queue<People> elevatorQueue = new LinkedBlockingQueue<>();
+            // 엘레베이터 용량 확인
+            People waitPeople = queue.poll();
+            elevatorQueue.add(waitPeople);
+            if (xSum + 1 <= X || ySum + waitPeople.getWeight() <= Y) {
+                xSum += 1;
+                ySum += waitPeople.getWeight();
+            }
+
+            while (!elevatorQueue.isEmpty()) {
+                People p = elevatorQueue.poll();
+                if (floor != p.getGoal()) {
+                    floor = p.getGoal();
+                    count++;
                 }
+            }
+            // 1층으로 돌아가기
+            if (elevatorQueue.isEmpty()) {
+                count++;
+                return getInElv(queue, X, Y, count);
             }
         }
         return count;
@@ -74,6 +74,14 @@ public class TestMain {
 
         public int getGoal() {
             return goal;
+        }
+
+        @Override
+        public String toString() {
+            return "People{" +
+                    "weight=" + weight +
+                    ", goal=" + goal +
+                    '}';
         }
     }
 }

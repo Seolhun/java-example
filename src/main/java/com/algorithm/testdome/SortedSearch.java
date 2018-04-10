@@ -1,4 +1,4 @@
-package com.algorithm.testdome.java;
+package com.algorithm.testdome;
 
 public class SortedSearch {
     /*

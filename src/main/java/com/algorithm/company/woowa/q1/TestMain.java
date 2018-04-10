@@ -1,4 +1,4 @@
-package com.woowa.q1;
+package com.algorithm.company.woowa.q1;
 
 public class TestMain {
     public static void main(String args[]) {

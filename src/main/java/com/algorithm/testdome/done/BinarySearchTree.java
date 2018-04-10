@@ -1,4 +1,4 @@
-package com.algorithm.testdome.java.done;
+package com.algorithm.testdome.done;
 class Node {
     public int value;
     public Node left, right;
