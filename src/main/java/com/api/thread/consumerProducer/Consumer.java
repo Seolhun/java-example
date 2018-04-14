@@ -3,9 +3,9 @@ package com.api.thread.consumerProducer;
 import java.util.concurrent.BlockingQueue;
 
 public class Consumer implements Runnable {
-    private BlockingQueue<Tasks> queue;
+    private BlockingQueue<Tasks<Message>> queue;
 
-    public Consumer(BlockingQueue<Tasks> queue) {
+    public Consumer(BlockingQueue<Tasks<Message>> queue) {
         this.queue = queue;
     }
 
@@ -14,7 +14,7 @@ public class Consumer implements Runnable {
         System.out.println("Consumer Thread Run");
         try {
             while(true) {
-                Tasks tasks = queue.take();
+                Tasks<Message> tasks = queue.take();
 
                 System.out.println("================================");
                 tasks.printTasks();

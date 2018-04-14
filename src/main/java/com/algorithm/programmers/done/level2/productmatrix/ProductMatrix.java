@@ -1,4 +1,4 @@
-package com.algorithm.done.level2.productmatrix;
+package com.algorithm.programmers.done.level2.productmatrix;
 
 class ProductMatrix {
     public int[][] productMatrix(int[][] A, int[][] B) {

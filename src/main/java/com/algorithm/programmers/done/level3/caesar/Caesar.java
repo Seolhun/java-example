@@ -1,4 +1,4 @@
-package com.algorithm.done.level3.caesar;
+package com.algorithm.programmers.done.level3.caesar;
 
 class Caesar {
     String caesar(String s, int n) {

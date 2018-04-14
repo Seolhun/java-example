@@ -12,6 +12,8 @@ class MainClass {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int INPUT = scan.nextInt();
+        scan.close();
+        
 
         MainClass mains = new MainClass();
         int[] coins = {500, 100, 50, 10, 5, 1};
@@ -21,8 +23,6 @@ class MainClass {
     }
 
     int getCountsByCoin(int price, int coin) {
-        int discount = 0;
-
         if (price >= coin) {
             int useable_count = price / coin;
             if (useable_count != 0) {

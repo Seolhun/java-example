@@ -1,4 +1,4 @@
-package com.algorithm.done.level1.fibonacci;
+package com.algorithm.programmers.done.level1.fibonacci;
 
 import java.util.ArrayList;
 import java.util.List;

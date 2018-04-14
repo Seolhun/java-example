@@ -62,16 +62,18 @@ public class QuickSort {
             }
         }
 
-        if (lowest < j)
+        if (lowest < j) {
             quickSort(list, lowest, j);
+        }
 
-        if (highest > i)
+        if (highest > i) {
             quickSort(list, i, highest);
+
+        }
     }
 
 
     //중복 없는 배열 만들기
-
     private void setIntNotDuplication(List<Integer> list, int size) {
         for (int i = 0; i < size; i++) {
             list.add(setRnadomSize(size));

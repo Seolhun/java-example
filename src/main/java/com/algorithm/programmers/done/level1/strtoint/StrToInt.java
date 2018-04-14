@@ -1,4 +1,4 @@
-package com.algorithm.done.level1.strtoint;
+package com.algorithm.programmers.done.level1.strtoint;
 
 public class StrToInt {
     public int getStrToInt(String str) {

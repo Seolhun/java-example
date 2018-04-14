@@ -1,4 +1,4 @@
-package com.algorithm.done.level4.noovertime;
+package com.algorithm.programmers.done.level4.noovertime;
 
 class NoOvertime {
     /*

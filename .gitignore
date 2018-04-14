@@ -1,5 +1,5 @@
-.idea
-.gradle
-.settings
-out/
+.idea/*
+.gradle/*
+.settings/*
+out/*
 .DS_Store

@@ -1,7 +1,7 @@
 package com.algorithm.company.woowa.q2;
 
+import java.util.LinkedList;
 import java.util.Queue;
-import java.util.concurrent.LinkedBlockingQueue;
 
 public class TestMain {
     public static void main(String args[]) {
@@ -21,7 +21,7 @@ public class TestMain {
     // 무게 제한 : Y
     // (즉, A [0]과 B [0]은 대기열에있는 첫 번째 사람을 나타냅니다.)
     public int solution(int[] A, int[] B, int M, int X, int Y) {
-        Queue<People> waitingQueue = new LinkedBlockingQueue<>();
+        Queue<People> waitingQueue = new LinkedList<>();
         for (int i = 0; i < A.length; i++) {
             waitingQueue.offer(new People(A[i], B[i]));
         }
@@ -34,7 +34,7 @@ public class TestMain {
         int floor = 1;
 
         while (!queue.isEmpty()) {
-            Queue<People> elevatorQueue = new LinkedBlockingQueue<>();
+            Queue<People> elevatorQueue = new LinkedList<>();
             // 엘레베이터 용량 확인
             People waitPeople = queue.poll();
             elevatorQueue.add(waitPeople);

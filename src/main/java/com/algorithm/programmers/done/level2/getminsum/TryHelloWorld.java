@@ -1,4 +1,4 @@
-package com.algorithm.done.level2.getminsum;
+package com.algorithm.programmers.done.level2.getminsum;
 
 import java.util.Arrays;
 

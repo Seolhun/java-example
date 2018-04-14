@@ -14,6 +14,7 @@ public class A1152 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String INPUT = scan.nextLine();
+        scan.close();
 
         String[] questions = INPUT.split(" ");
         Pattern pattern = Pattern.compile("^[A-z]*");

@@ -5,9 +5,9 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class Producer implements Runnable {
-    private BlockingQueue<Tasks> tasksQueue;
+    private BlockingQueue<Tasks<Message>> tasksQueue;
 
-    public Producer(BlockingQueue<Tasks> tasksQueue) {
+    public Producer(BlockingQueue<Tasks<Message>> tasksQueue) {
         this.tasksQueue = tasksQueue;
     }
 

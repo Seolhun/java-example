@@ -5,7 +5,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 public class Main {
 
     public static void main(String args[])  {
-        ArrayBlockingQueue<Tasks> queue = new ArrayBlockingQueue<>(1000);
+        ArrayBlockingQueue<Tasks<Message>> queue = new ArrayBlockingQueue<>(1000);
 
         Thread consumer = new Thread(new Consumer(queue));
         Thread producer = new Thread(new Producer(queue));

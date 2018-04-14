@@ -1,4 +1,4 @@
-package com.algorithm.done.level1.findkim;
+package com.algorithm.programmers.done.level1.findkim;
 
 public class FindKim {
     public String findKim(String[] seoul) {

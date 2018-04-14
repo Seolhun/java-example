@@ -1,4 +1,4 @@
-package com.algorithm.done.level3.ncm;
+package com.algorithm.programmers.done.level3.ncm;
 
 /*
     배열의 값을 2개씩 순차적으로 비교하여, 최소공약수를 찾아나간다.

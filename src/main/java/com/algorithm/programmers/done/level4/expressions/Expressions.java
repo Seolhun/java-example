@@ -1,4 +1,4 @@
-package com.algorithm.done.level4.expressions;
+package com.algorithm.programmers.done.level4.expressions;
 
 public class Expressions {
     public int expressions(int num) {
