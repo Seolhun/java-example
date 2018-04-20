@@ -16,7 +16,7 @@ package com.algorithm.testdome;
  * - 4 and 1 (9 + 3 = 12)
  */
 public class TwoSum {
-    public static int[] findTwoSum(int[] list, int sum) {
+    private static int[] findTwoSum(int[] list, int sum) {
         int[] results = new int[2];
         for (int i = 0; i < list.length; i++) {
             int result = sum - list[i];
@@ -26,9 +26,6 @@ public class TwoSum {
                     results[1] = j;
                 }
             }
-        }
-        if(results.length == 0){
-            return null;
         }
         return results;
     }

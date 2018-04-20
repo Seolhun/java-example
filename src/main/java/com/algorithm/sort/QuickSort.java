@@ -1,67 +1,43 @@
 package com.algorithm.sort;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class QuickSort {
+    private static int[] unsorted_array = {10, 6, 4, 5, 1};
 
-    private static Scanner scan;
-
-    public static void main(String[] args) {
-        QuickSort quickSort = new QuickSort();
-        List<Integer> list = new ArrayList<>();
-        scan = new Scanner(System.in);
-
-        System.out.println("Insert Array Size");
-        int size = scan.nextInt();
-
-        System.out.println("Ramdom Array is Creating");
-        quickSort.setIntNotDuplication(list, size);
-        System.out.println("Ramdom Array is Created");
-
-        Date date = new Date();
-        System.out.println("Start Quick Sort");
-        quickSort.quickSort(list, 0, list.size() - 1);
-        System.out.println("End Quick Sorted List : " + list);
-        System.out.println("End Quick Sort size : " + size);
-
-        Date date2 = new Date();
-        System.out.println("End Quick Sorted time : " + (date2.getTime() - date.getTime()));
+    public static void main(String args[]) {
+        quickSort(unsorted_array, 0, unsorted_array.length - 1);
     }
 
-    private void quickSort(List<Integer> list, int lowest, int highest) {
-        if (list == null || list.size() < 1) {
-            return;
-        } else if (lowest >= highest) {
+    private static void quickSort(int[] list, int lowest, int highest) {
+        if (lowest >= highest) {
             return;
         }
 
-        int middle = lowest + ((highest - lowest) / 2);
-        int pivot = list.get(middle);
+        int mid = lowest + ((highest - lowest) / 2);
+        int pivot = list[mid];
 
         int i = lowest;
         int j = highest;
 
         while (i <= j) {
-            while (list.get(i) < pivot) {
+            while (list[i] < pivot) {
                 i++;
             }
 
-            while (list.get(j) > pivot) {
+            while (list[j] > pivot) {
                 j--;
             }
 
             if (i <= j) {
-                int temp = list.get(i);
-                list.set(i, list.get(j));
-                list.set(j, temp);
+                int temp = list[i];
+                list[i] = list[j];
+                list[j] = temp;
                 i++;
                 j--;
             }
         }
-
+        System.out.println(Arrays.toString(unsorted_array));
         if (lowest < j) {
             quickSort(list, lowest, j);
         }
@@ -70,27 +46,6 @@ public class QuickSort {
             quickSort(list, i, highest);
 
         }
-    }
-
-
-    //중복 없는 배열 만들기
-    private void setIntNotDuplication(List<Integer> list, int size) {
-        for (int i = 0; i < size; i++) {
-            list.add(setRnadomSize(size));
-            for (int j = 0; j < list.size() - 1; j++) {
-                if (list.get(j) == list.get(i)) {
-                    list.set(i, setRnadomSize(size));
-                    j = 0;
-                }
-            }
-        }
-        System.out.println("param : Random List : " + list);
-    }
-
-    // 랜덤 숫자 만들기
-
-    private int setRnadomSize(int size) {
-        return (int) ((Math.random() * (size * 100)) + 1);
     }
 }
 

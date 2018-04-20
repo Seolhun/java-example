@@ -17,15 +17,17 @@ public class Solution {
             // 3. 두개의 길이 만큼의 종목 값과 심사위원단 점수 값을 배열에 담는다.
             int N = sc.nextInt();
             int M = sc.nextInt();
+
+            // 스포츠 경기 비용 // 앞 순서일수록 재미 높음
             int[] nList = new int[N];
             for (int j = 0; j < N; j++) {
                 nList[j] = sc.nextInt();
             }
+            // 허용 비용 최대 값
             int[] mList = new int[M];
             for (int j = 0; j < M; j++) {
                 mList[j] = sc.nextInt();
             }
-
             // 4. 조직위원회 값에 가장 근접한 종목의 값을 고른다.
             printResult(sb, i + 1, getResult(nList, mList));
         }
@@ -37,12 +39,12 @@ public class Solution {
         for (int m : mList) {
             for (int i = 0; i < nList.length; i++) {
                 if (m > nList[i]) {
-                    results[i] = i;
+                    results[i] = i + 1;
                     break;
                 }
             }
         }
-    
+
         return 0;
     }
 
