@@ -54,51 +54,70 @@ public class Solution {
 
             // 시작점
             visit[R][C] = true;
-            queue.offer(new Graph(R, C));
-
-            // 현재위치
-            // 시작점에서 L - 1 시간까지 이동하기
-            while (!queue.isEmpty()) {
-                Graph graph = queue.poll();
-                int type = map[graph.x][graph.y];
-                int[] roadDirection = ROAD_TYPE[type];
-                move(graph, roadDirection);
-            }
+            queue.offer(new Graph(C, R));
+            move();
 
             int result = 0;
-            for (int i = 0; i < visit.length; i++) {
-                for (int j = 0; j < visit[i].length; j++) {
-                    if (visit[i][j]) {
+            for (boolean[] aVisit : visit) {
+                for (boolean anAVisit : aVisit) {
+                    if (anAVisit) {
                         result++;
                     }
                 }
             }
-            for (int i = 0; i < visit.length; i++) {
-                System.out.println(Arrays.toString(visit[i]));
+            for (boolean[] aVisit : visit) {
+                System.out.println(Arrays.toString(aVisit));
             }
             printResult(sb, t, result);
         }
         br.close();
     }
 
-    private static void move(Graph graph, int[] roadDirection) {
-        for (int i = 0; i < L - 1; i++) {
-            if (roadDirection[i] != 0) {
-                for (int j = 0; j < roadDirection.length; j++) {
-                    int x = graph.x + DX[j];
-                    int y = graph.y + DY[j];
-                    if (x >= 0 && y >= 0 && x < N && y < M && map[x][y] != 0) {
-                        if (!visit[x][y]) {
-                            visit[x][y] = true;
-                            queue.offer(new Graph(x, y));
-                        }
-                    }
+    private static boolean isConnected(int i, int[] fromDir, int[] toDir) {
+        if (fromDir[i] != 1) {
+            return false;
+        }
+        switch (i) {
+            case 0:
+                return toDir[2] == 1;
+            case 1:
+                return toDir[3] == 1;
+            case 2:
+                return toDir[0] == 1;
+            case 3:
+                return toDir[1] == 1;
+            default:
+                return false;
+        }
+    }
+
+    private static void move() {
+        while (!queue.isEmpty()) {
+            Graph graph = queue.poll();
+            int fromType = map[graph.y][graph.x];
+            int[] from = ROAD_TYPE[fromType];
+            for (int j = 0; j < 4; j++) {
+                moveRoad(graph, from, j);
+            }
+        }
+    }
+
+    private static void moveRoad(Graph graph, int[] from, int index) {
+        int x = graph.x + DX[index];
+        int y = graph.y + DY[index];
+        if (x >= 0 && y >= 0 && x < N && y < M && map[y][x] != 0) {
+            int toType = map[y][x];
+            int[] to = ROAD_TYPE[toType];
+            if (isConnected(index, from, to)) {
+                if (!visit[y][x]) {
+                    visit[y][x] = true;
+                    queue.offer(new Graph(x, y));
                 }
             }
         }
     }
 
-    static void printResult(StringBuilder sb, int index, int result) {
+    private static void printResult(StringBuilder sb, int index, int result) {
         sb.setLength(0);
         sb.append("#");
         sb.append(index);
@@ -107,13 +126,12 @@ public class Solution {
         System.out.println(sb.toString());
     }
 
-    static class Graph {
+    private static class Graph {
         int x, y;
 
         Graph(int x, int y) {
             this.x = x;
             this.y = y;
         }
-
     }
 }
