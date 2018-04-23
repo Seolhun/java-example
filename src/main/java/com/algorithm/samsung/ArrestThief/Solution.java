@@ -4,8 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Stack;
 
 public class Solution {
     private static int N; // 지하 터널 지도의 세로 크기 N
@@ -14,18 +13,22 @@ public class Solution {
     private static int C; // 맨홀 뚜껑이 위치한 장소의 가로 위치 C
     private static int L; // 탈출 후 소요시간 L
 
-    // 방향 값 만들기 : 위 우 아래 좌
+    // 방향 값 만들기 : 상 우 하 좌
     private static final int DX[] = {0, 1, 0, -1};
     private static final int DY[] = {1, 0, -1, 0};
+    private static final boolean ROAD_TYPE[][] = {
+            {false, false, false, false},   // 0
+            {true, true, true, true},       // 1
+            {true, false, true, false},     // 2
+            {false, true, false, true},     // 3
+            {true, true, false, false},     // 4
+            {false, true, true, false},     // 5
+            {false, false, true, true},     // 6
+            {true, false, false, true}      // 7
+    };
 
-    private static final int ROAD_TYPE[][] = {{0, 0, 0, 0}, {1, 1, 1, 1}, {1, 0, 1, 0}, {0, 1, 0, 1}, {1, 1, 0, 0}, {0, 1, 1, 0}, {0, 0, 1, 1}, {1, 0, 0, 1}};
-
-    // Map 그리기
     private static int map[][];
-    // 방문한 주소
     private static boolean visit[][];
-    // 방문한 주소 담기용
-    private static Queue<Graph> queue;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -42,7 +45,6 @@ public class Solution {
 
             map = new int[N][M];
             visit = new boolean[N][M];
-            queue = new LinkedList<>();
 
             // 지도 만들기
             for (int i = 0; i < N; i++) {
@@ -54,8 +56,21 @@ public class Solution {
 
             // 시작점
             visit[R][C] = true;
-            queue.offer(new Graph(C, R));
-            move();
+            for (int i = 0; i < 4; i++) {
+                Stack<Graph> stack = new Stack<>();
+                Graph root = new Graph(R, C);
+                moveLine(i, root, stack);
+                int time = L - 1;
+                while (!stack.isEmpty() && time > 1) {
+                    Graph child = stack.pop();
+                    for (int j = 0; j < 4; j++) {
+                        moveLine(j, child, stack);
+                    }
+                    time--;
+                }
+                // 시간 문제를 해결해야함.
+            }
+
 
             int result = 0;
             for (boolean[] aVisit : visit) {
@@ -65,55 +80,41 @@ public class Solution {
                     }
                 }
             }
-            for (boolean[] aVisit : visit) {
-                System.out.println(Arrays.toString(aVisit));
-            }
             printResult(sb, t, result);
         }
         br.close();
     }
 
-    private static boolean isConnected(int i, int[] fromDir, int[] toDir) {
-        if (fromDir[i] != 1) {
-            return false;
+    private static void moveLine(int direction, Graph graph, Stack<Graph> stack) {
+        for (boolean[] aVisit : visit) {
+            System.out.println(Arrays.toString(aVisit));
         }
-        switch (i) {
-            case 0:
-                return toDir[2] == 1;
-            case 1:
-                return toDir[3] == 1;
-            case 2:
-                return toDir[0] == 1;
-            case 3:
-                return toDir[1] == 1;
-            default:
-                return false;
-        }
-    }
+        System.out.println("#######################################");
 
-    private static void move() {
-        while (!queue.isEmpty()) {
-            Graph graph = queue.poll();
-            int fromType = map[graph.y][graph.x];
-            int[] from = ROAD_TYPE[fromType];
-            for (int j = 0; j < 4; j++) {
-                moveRoad(graph, from, j);
-            }
-        }
-    }
-
-    private static void moveRoad(Graph graph, int[] from, int index) {
-        int x = graph.x + DX[index];
-        int y = graph.y + DY[index];
-        if (x >= 0 && y >= 0 && x < N && y < M && map[y][x] != 0) {
+        int fromType = map[graph.y][graph.x];
+        boolean[] from = ROAD_TYPE[fromType];
+        int x = graph.x + DX[direction];
+        int y = graph.y + DY[direction];
+        if (x >= 0 && y >= 0 && x < M && y < N && map[y][x] != 0 && !visit[y][x]) {
             int toType = map[y][x];
-            int[] to = ROAD_TYPE[toType];
-            if (isConnected(index, from, to)) {
-                if (!visit[y][x]) {
-                    visit[y][x] = true;
-                    queue.offer(new Graph(x, y));
-                }
+            boolean[] to = ROAD_TYPE[toType];
+            if (isConnected(from, to)) {
+                visit[y][x] = true;
+                stack.add(new Graph(y, x));
             }
+        }
+    }
+
+    private static boolean isConnected(boolean[] fromDir, boolean[] toDir) {
+        return fromDir[0] && toDir[2] || fromDir[1] && fromDir[3];
+    }
+
+    private static class Graph {
+        int x, y;
+
+        Graph(int y, int x) {
+            this.y = y;
+            this.x = x;
         }
     }
 
@@ -124,14 +125,5 @@ public class Solution {
         sb.append(" ");
         sb.append(result);
         System.out.println(sb.toString());
-    }
-
-    private static class Graph {
-        int x, y;
-
-        Graph(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
     }
 }
