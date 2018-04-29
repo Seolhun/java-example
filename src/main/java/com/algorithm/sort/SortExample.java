@@ -23,6 +23,7 @@ public class SortExample {
         long start = System.currentTimeMillis();
         System.out.println("Start Quick Sort");
         quickSort.sort(quickList, 0, list.length - 1);
+        System.out.println(Arrays.toString(quickList));
         long end = System.currentTimeMillis();
         System.out.println("End Quick Sorted time : " + (end - start));
 
@@ -30,6 +31,7 @@ public class SortExample {
         long start2 = System.currentTimeMillis();
         System.out.println("Start Merge Sort");
         mergeSort.sort(mergeList);
+        System.out.println(Arrays.toString(mergeList));
         long end2 = System.currentTimeMillis();
         System.out.println("End Merge Sorted time : " + (end2 - start2));
     }

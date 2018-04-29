@@ -1,52 +1,57 @@
 package com.algorithm.sort;
 
+import java.util.Arrays;
+
 public class MergeSort {
     private static int[] unsorted_array = {2, 1390, 425, 1122, 1208, 1443, 462, 1155, 849, 455, 1053, 1155, 318, 79, 788};
-
     private int[] numbers;
-    private int[] helpers;
+    private int[] helper;
 
     public static void main(String args[]) {
-        MergeSort merge = new MergeSort();
-        merge.sort(unsorted_array);
+        MergeSort mergeSort = new MergeSort();
+        mergeSort.sort(unsorted_array);
     }
 
-    void sort(int[] values) {
-        numbers = values;
+    public void sort(int[] values) {
+        this.numbers = values;
         int size = values.length;
-        helpers = new int[size];
-        mergeSort(0, size);
+        this.helper = new int[size];
+        mergesort(0, size - 1);
     }
 
-    private void mergeSort(int low, int high) {
+    private void mergesort(int low, int high) {
         if (low < high) {
-            int mid = (low + high) / 2;
-            mergeSort(low, mid);
-            mergeSort(mid + 1, high);
-            merge(low, mid, high);
+            int middle = low + ((high - low) / 2);
+            mergesort(low, middle);
+            mergesort(middle + 1, high);
+            merge(low, middle, high);
+            System.out.println(Arrays.toString(unsorted_array));
         }
     }
 
     private void merge(int low, int middle, int high) {
-        System.arraycopy(numbers, low, helpers, low, high - low);
-        int l = low;
-        int l2 = low;
+        for (int i = low; i <= high; i++) {
+            helper[i] = numbers[i];
+        }
+
+        int l1 = low;
         int mid = middle + 1;
-        while (l <= middle && mid < high) {
-            if (helpers[l] <= helpers[mid]) {
-                numbers[l2] = helpers[l];
-                l++;
+        int l2 = low;
+        while (l1 <= middle && mid <= high) {
+            if (helper[l1] <= helper[mid]) {
+                numbers[l2] = helper[l1];
+                l1++;
             } else {
-                numbers[l2] = helpers[mid];
+                numbers[l2] = helper[mid];
                 mid++;
             }
             l2++;
         }
-        while (l <= middle) {
-            numbers[l2] = helpers[l];
+        while (l1 <= middle) {
+            numbers[l2] = helper[l1];
             l2++;
-            l++;
+            l1++;
         }
+
     }
 }
-

@@ -1,7 +1,9 @@
 package com.algorithm.sort;
 
+import java.util.Arrays;
+
 public class QuickSort {
-    private static int[] unsorted_array = {2, 1390, 425, 1122, 1208, 1443, 462, 1155, 849, 455, 1053, 1155, 318, 79, 788};
+    private static int[] unsorted_array = {2, 1390, 425, 1122, 1208, 1443, 462, 849, 455, 1053, 1155, 318, 79, 788};
 
     public static void main(String args[]) {
         QuickSort quickSort = new QuickSort();
@@ -13,7 +15,9 @@ public class QuickSort {
             return;
         }
 
-        int mid = lowest + ((highest - lowest) / 2);
+        int mid = lowest + ((highest - lowest)) / 2;
+        System.out.println("====");
+        System.out.println(mid);
         int pivot = list[mid];
 
         int low = lowest;
@@ -35,6 +39,7 @@ public class QuickSort {
                 low++;
                 high--;
             }
+            System.out.println(Arrays.toString(unsorted_array));
         }
 
         // 3. low > high이 되면 lowest와 highest의 값을 수정해서 재귀시켜서 다시 Sort를 진행합니다.
