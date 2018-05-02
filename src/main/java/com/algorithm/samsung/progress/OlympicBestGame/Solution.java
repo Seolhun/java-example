@@ -1,4 +1,4 @@
-package com.algorithm.samsung.OlympicBestGame;
+package com.algorithm.samsung.progress.OlympicBestGame;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package com.algorithm.samsung.PossibleExamPoints;
+package com.algorithm.samsung.progress.PossibleExamPoints;
 
 import java.io.BufferedReader;
 import java.io.IOException;

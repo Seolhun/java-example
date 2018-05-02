@@ -1,4 +1,4 @@
-package com.algorithm.samsung.Hamberger;
+package com.algorithm.samsung.progress.Hamberger;
 
 import java.io.BufferedReader;
 import java.io.IOException;
