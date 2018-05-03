@@ -2,10 +2,8 @@ package com.algorithm.bj.a1152;
 
 /**
  * @author HunSeol
- * @created_date 2017. 11. 8.
- * @IDE IntelliJ IDEA
+ * @see https://www.acmicpc.net/problem/1152
  */
-
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

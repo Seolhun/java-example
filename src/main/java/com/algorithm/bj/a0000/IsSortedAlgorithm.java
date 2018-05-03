@@ -2,10 +2,8 @@ package com.algorithm.bj.a0000;
 
 /**
  * @author HunSeol
- * @created_date 2017. 11. 8.
- * @IDE IntelliJ IDEA
+ * @see https://www.acmicpc.net/problem/0000
  */
-
 import java.util.ArrayList;
 import java.util.List;
 

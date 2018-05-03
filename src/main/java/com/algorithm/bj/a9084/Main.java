@@ -2,22 +2,22 @@ package com.algorithm.bj.a9084;
 
 /**
  * @author HunSeol
- * @created_date 2017. 11. 8.
- * @IDE IntelliJ IDEA
+ * @see https://www.acmicpc.net/problem/9084
  */
 
 import java.util.Scanner;
 
-class MainClass {
+
+class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int INPUT = scan.nextInt();
         scan.close();
-        
 
-        MainClass mains = new MainClass();
+
+        Main mains = new Main();
         int[] coins = {500, 100, 50, 10, 5, 1};
-        for (int coin: coins) {
+        for (int coin : coins) {
             INPUT = mains.getCountsByCoin(INPUT, coin);
         }
     }
