@@ -1,4 +1,4 @@
-package com.algorithm.bj.a0000;
+package com.algorithm.bj.done.a0000;
 
 enum Order {
     ASC("ASC"),

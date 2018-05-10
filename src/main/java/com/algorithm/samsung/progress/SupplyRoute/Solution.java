@@ -1,5 +1,10 @@
 package com.algorithm.samsung.progress.SupplyRoute;
 
+/**
+ * @author HunSeol
+ * @see https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV15QRX6APsCFAYD
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,34 +16,24 @@ public class Solution {
     static int N;
     static String V;
     static int map[][];
+    static int times[][];
 
     static Graph start;
     static Graph goal;
 
-    static final int[] DX = {0, 1};
-    static final int[] DY = {1, 0};
+    //상 우 하 좌
+    static final int[] DY = {-1, 0, 1, 0};
+    static final int[] DX = {0, 1, 0, -1};
 
     static Queue<Graph> queue;
-    static int min;
 
     static class Graph {
         int x;
         int y;
-        int time;
 
-        Graph(int x, int y, int time) {
+        Graph(int x, int y) {
             this.x = x;
             this.y = y;
-            this.time = time;
-        }
-
-        @Override
-        public String toString() {
-            return "Graph{" +
-                    "x=" + x +
-                    ", y=" + y +
-                    ", time=" + time +
-                    '}';
         }
     }
 
@@ -50,42 +45,42 @@ public class Solution {
         for (int t = 1; t <= T; t++) {
             N = Integer.parseInt(bf.readLine());
             map = new int[N][N];
+            times = new int[N][N];
             for (int j = 0; j < map.length; j++) {
                 V = bf.readLine();
                 for (int k = 0; k < map[j].length; k++) {
                     map[j][k] = V.charAt(k) - 48;
+                    times[j][k] = 9999;
                 }
             }
 
-            start = new Graph(0, 0, 0);
-            goal = new Graph(N - 1, N - 1, 0);
-            queue = new LinkedList<>();
-            queue.offer(start);
-            min = 100;
+            // Basic Setting
+            start = new Graph(0, 0);
+            times[0][0] = 0;
 
+            goal = new Graph(N - 1, N - 1);
+            // Queue Setting
+            queue = new LinkedList<>();
+            queue.add(start);
             while (!queue.isEmpty()) {
-                Graph graph = queue.poll();
-                if (graph.x == goal.x && graph.y == goal.y) {
-                    if (min > graph.time) {
-                        min = graph.time;
+                Graph graph = queue.remove();
+                int x = graph.x;
+                int y = graph.y;
+                for (int i = 0; i < DX.length; i++) {
+                    int moveX = x + DX[i];
+                    int moveY = y + DY[i];
+                    if (moveX < 0 || moveX >= N || moveY < 0 || moveY >= N) {
+                        continue;
+                    }
+                    if (times[y][x] + map[moveY][moveX] < times[moveY][moveX]) {
+                        times[moveY][moveX] = times[y][x] + map[moveY][moveX];
+                        queue.add(new Graph(moveX, moveY));
                     }
                 }
-                getTime(graph);
             }
-            printResult(sb, t, min);
+            printResult(sb, t, times[N - 1][N - 1]);
         }
         bf.close();
-    }
-
-    // 둘 중에 작은 값 선택하기.
-    static void getTime(Graph graph) {
-        for (int i = 0; i < 2; i++) {
-            int movedX = graph.x + DX[i];
-            int movedY = graph.y + DY[i];
-            if (movedX < N && movedY < N) {
-                queue.offer(new Graph(movedX, movedY, graph.time + map[movedY][movedX]));
-            }
-        }
     }
 
     static void printResult(StringBuilder sb, int index, int result) {

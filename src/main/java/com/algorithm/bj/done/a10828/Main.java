@@ -1,4 +1,4 @@
-package com.algorithm.bj.a10828;
+package com.algorithm.bj.done.a10828;
 
 /**
  * @author HunSeol
