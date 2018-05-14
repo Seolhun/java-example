@@ -1,8 +1,8 @@
-package com.algorithm.bj.progress.step8;
+package com.algorithm.bj.progress.step8.Q6064;
 
 /**
  * @author HunSeol
- * @see https://www.acmicpc.net/problem/1157
+ * @see https://www.acmicpc.net/problem/6064
  */
 
 import java.io.BufferedReader;

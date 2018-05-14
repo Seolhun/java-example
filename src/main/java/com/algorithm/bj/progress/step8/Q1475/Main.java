@@ -1,4 +1,4 @@
-package com.algorithm.bj.progress.step8.Q1193;
+package com.algorithm.bj.progress.step8.Q1475;
 
 /**
  * @author HunSeol
@@ -10,15 +10,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
-    // Testcase
-    static int T;
 
     public static void main(String args[]) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        T = Integer.parseInt(bf.readLine());
-
-        int head = T / 10 + 1;
-        int tail = (T % 10) == 0 ? 10 : T % 10;
-        System.out.println(head + "/" + tail);
+        // Testcase
+        String input = bf.readLine();
     }
 }
