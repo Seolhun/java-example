@@ -1,5 +1,7 @@
 package com.algorithm.sort;
 
+import com.algorithm.AlgorithmUtils;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -13,7 +15,7 @@ public class SortExample {
         System.out.println("Insert Array Size");
         int size = scan.nextInt();
         int[] list = new int[size];
-        setIntNotDuplication(list);
+        list = AlgorithmUtils.buildRandomList(list);
 
         int[] quickList = new int[list.length];
         System.arraycopy(list, 0, quickList, 0, quickList.length);
@@ -34,21 +36,5 @@ public class SortExample {
         System.out.println(Arrays.toString(mergeList));
         long end2 = System.currentTimeMillis();
         System.out.println("End Merge Sorted time : " + (end2 - start2));
-    }
-
-    private static void setIntNotDuplication(int[] list) {
-        for (int i = 0; i < list.length; ++i) {
-            list[i] = setRnadomSize(list.length);
-            for (int j = 0; j < list.length; ++j) {
-                if (list[j] == list[i]) {
-                    list[i] = setRnadomSize(list.length);
-                }
-            }
-        }
-        System.out.println("Ramdom Array is Created : " + Arrays.toString(list));
-    }
-
-    private static int setRnadomSize(int size) {
-        return (int) (Math.random() * (double) (size * 100) + 1.0D);
     }
 }

@@ -1,4 +1,4 @@
-package com.algorithm.company.yanolja.Q1;
+package com.algorithm.company.yanolja.done.Q1;
 
 class Solution {
     public void solution(int N) {

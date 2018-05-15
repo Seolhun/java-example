@@ -1,4 +1,4 @@
-package com.algorithm.company.yanolja.Q3;
+package com.algorithm.company.yanolja.done.Q3;
 
 import java.util.Stack;
 

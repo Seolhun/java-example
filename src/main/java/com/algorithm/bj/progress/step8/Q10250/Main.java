@@ -13,7 +13,6 @@ public class Main {
 
     public static void main(String args[]) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
 
         // Testcase
         int t = Integer.parseInt(bf.readLine());
@@ -23,31 +22,28 @@ public class Main {
             int W = Integer.parseInt(Q[1]);
             int N = Integer.parseInt(Q[2]);
 
-            System.out.println(solve(H, W, N));
+            solve(H, W, N);
         }
     }
 
-    static String solve(int H, int W, int N) {
-        int XX = N % H == 0 ? H : N % H;
-        int YY = N < H ? N : N % H == 0 ? W : N / H + 1;
-
-        String strXX = String.valueOf(XX);
-        String strH = String.valueOf(H);
-
-        if (strH.length() != 1) {
-            if (strXX.length() == 1) {
-                strXX = "0" + strXX;
-            }
+    static void solve(int H, int W, int N) {
+        // 높이 (층)
+        int floor = N % H == 0 ? H : N % H;
+        // 넓이 (호)
+        int ho = (int) Math.ceil((double) N / H);
+        if(ho >= 10) {
+            ho += 1;
         }
 
-        String strYY = String.valueOf(YY);
-        String strW = String.valueOf(W);
-
-        if (strW.length() != 1) {
-            if (strYY.length() == 1) {
-                strYY = "0" + strYY;
-            }
+        String strFloor = "";
+        if (H >= 10 && floor < 10) {
+            strFloor = String.format("%02d", floor);
         }
-        return strXX + strYY;
+        String strHo = "";
+        if (W >= 10 && ho < 10) {
+            strHo = String.format("%02d", ho);
+        }
+        System.out.print(strFloor.length() > 0 ? strFloor : floor);
+        System.out.print(strHo.length() > 0 ? strHo : ho);
     }
 }

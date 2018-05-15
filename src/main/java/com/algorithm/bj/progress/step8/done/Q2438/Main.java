@@ -20,8 +20,7 @@ public class Main {
 
         for (int i = 0; i < T; i++) {
             sb.append("*");
-            System.out.print(sb.toString());
-            System.out.println();
+            System.out.println(sb.toString());
         }
     }
 }

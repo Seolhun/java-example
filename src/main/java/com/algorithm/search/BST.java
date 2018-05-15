@@ -1,4 +1,4 @@
-package com.algorithm.Search;
+package com.algorithm.search;
 
 public class BST {
     private static int[] sorted_array = {228, 347, 575, 613, 775, 1035, 1346, 1437, 1532, 2163, 2316, 2412, 2245, 2432, 2403, 2549, 2574, 1050, 2680, 2691, 38, 2699, 827, 971, 2759, 921, 2759, 787, 1617, 2187};
