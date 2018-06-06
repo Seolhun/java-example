@@ -15,7 +15,6 @@ public class CountingSort {
     int[] sort(int[] values) {
         int[] results = new int[values.length + 1];
 
-
         int max = findMaxValue(values);
         counts = new int[max + 1];
         for (int i = 0; i < counts.length; i++) {
